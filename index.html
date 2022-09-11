@@ -5,15 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="style.css" />
-  <title>Responsive Side Menu</title>
+  <title>Orangetoolz</title>
 </head>
 
 <body>
@@ -21,10 +18,8 @@
     <i class="fas fa-bars" id="nav-toggler"></i>
     <div class="navbar">
       <div class="navbar-nav">
-        <!-- <a href="#news">Balance : <span class="bl-color">$125</span></a> -->
         <p>Balance : <span class="bl-color">$125</span></p>
       </div>
-      <!-- <p>Balance : <span>$125</span></p> -->
       <div class="dropdown">
         <button type="button" class="dropbtn" onclick="myFunction()">
           <img src="./images/profile.png" class="ht-profile-img" alt="icon">
@@ -57,7 +52,6 @@
         <li class="nav__item">
           <a href="#" class="nav__item-link">
             <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
-            <!-- <i class="fa-solid fa-objects-column"></i> -->
             <i class="fas fa-border-all"></i>
             <span>Dashboard</span>
           </a>
@@ -116,7 +110,7 @@
           </a>
         </li>
         <li class="nav__item">
-          <a href="profile.html" class="nav__item-link active">
+          <a href="#profile" class="nav__item-link active">
             <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fas fa-user-alt"></i>
             <span>Profile</span>
@@ -137,14 +131,106 @@
       <span>Sign Out</span>
     </a>
   </nav>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-    integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-  <script src="main.js" defer></script>
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
-    integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+  <!-- main content -->
+  <div class="page" id="profile">
+    <div class="container" id="profile">
+      <div class="profile-card">
+        <img src="./images/profile.png" alt="img">
+        <h3 class="card-title">John Doe</h3>
+        <div class="card-body">
+          <p>alexajui@gmail.com</p>
+          <p>+1 354 785 4125</p>
+          <p>3213 D Street, Columbus, USA</p>
+        </div>
+      </div>
+      <div class="pro-cradit-card">
+        <div class="cradit-card-body">
+          <h3 class="cradit-card-title">Your Credit Cards</h3>
+          <div class="card-container">
+            <div class="cradit-card">
+              <b><i class="fa-solid fa-trash-can"></i></b>
+              <h3 class="cradit-title">Credit Card 1</h3>
+              <h3 class="cradit-account">xxxxxxxxxxxx4684</h3>
+            </div>
+            <div class="cradit-card">
+              <b><i class="fa-solid fa-trash-can"></i></b>
+              <h3 class="cradit-title">Credit Card 2 (Default)</h3>
+              <h3 class="cradit-account">xxxxxxxxxxxx4242</h3>
+            </div>
+            <div class="cradit-card">
+              <b><i class="fa-solid fa-trash-can"></i></b>
+              <h3 class="cradit-title">Credit Card 3</h3>
+              <h3 class="cradit-account">xxxxxxxxxxxx1254</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-form">
+      <div class="profile-settings">
+        <div id='tabs' class="nav-profile">
+          <navbar class="nav-tab-wrapper">
+            <ul class="nav-items">
+              <li class="nav-list"><a href="#tab1" class="nav-link">Update Profile</a></li>
+              <li class="nav-list"><a href="#tab2" class="nav-link">Change Password</a></li>
+              <li class="nav-list"><a href="#tab3" class="nav-link">Email Notifications</a></li>
+              <li class="nav-list"><a href="#tab4" class="nav-link">Auto Recharge Settings</a></li>
+            </ul>
+          </navbar>
+          <hr class="navbar-hr" />
+
+          <div id="tab1" class="container-tab tab1">
+            tab1
+          </div>
+          <div id="tab2" class="container-tab tab2">
+            Tab2 stuff
+          </div>
+          <div id="tab3" class="container-tab tab3">
+
+            <div class="email-notification">
+              <h4>
+                <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox">
+                  <div class="toggle-switch"></div>
+                  <span class="toggle-label">Notify me when list verification completes</span>
+                </label>
+              </h4>
+
+              <h4>
+                <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox" checked>
+                  <div class="toggle-switch"></div>
+                  <span class="toggle-label">Notify me when list export completes</span>
+                </label>
+              </h4>
+              <h4>
+                <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox" checked>
+                  <div class="toggle-switch"></div>
+                  <span class="toggle-label">Notify me when list verification result is about to
+                    expire</span>
+                </label>
+              </h4>
+              <h4>
+                <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox" checked>
+                  <div class="toggle-switch"></div>
+                  <span class="toggle-label">Receive Low Credits Email</span>
+                </label>
+              </h4>
+            </div>
+
+          </div>
+          <div id="tab4" class="container-tab tab3">Tab4 stuff</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js" defer></script>
+
 </body>
 
 </html>
