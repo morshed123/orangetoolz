@@ -15,33 +15,14 @@
     <title>Document</title>
     <style>
         .container {
-            /* background: #eee; */
             width: 93%;
             margin: 70px 0px 0px 50px;
             display: grid;
             height: 300px;
-            /* grid-template-columns: 1fr 3fr; */
             grid-template-columns: repeat(1, 290px) auto;
-            /* grid-template-rows: 150px 100px; */
             grid-template-rows: repeat(1, 1fr);
             grid-gap: 20px;
         }
-
-        /* .items-1 {
-            background: #FFFFFF;
-        } */
-
-        /* .items-2 {
-            background: greenyellow;
-        }
-
-        .items-3 {
-            background: red;
-        }
-
-        .items-4 {
-            background: yellow;
-        } */
 
         .profile-card {
             box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
@@ -94,21 +75,6 @@
             grid-gap: 15px;
         }
 
-        .items-1 {
-            background: rgb(174, 175, 171);
-        }
-
-        .items-2 {
-            background: greenyellow;
-        }
-
-        .items-3 {
-            background: red;
-        }
-
-        /* .items-4 {
-            background: yellow;
-        } */
         .cradit-card-title {
             color: #26262E;
             font-size: 1.5rem;
@@ -125,6 +91,7 @@
             border-radius: 10px;
             padding: 15px;
         }
+
         .cradit-card:hover {
             border: 1px solid #FF7901;
         }
@@ -136,12 +103,14 @@
             border-radius: 40px;
             padding: 8px;
         }
+
         .cradit-title {
             color: #7D7D7E;
             font-size: 1.3rem;
             font-weight: 500;
             margin-bottom: 0px;
         }
+
         .cradit-account {
             color: #BDBDBD;
             font-size: 1.3rem;
@@ -150,16 +119,135 @@
         }
 
         .container-form {
-            /* background: #eee; */
             width: 93%;
             margin: 70px 0px 0px 50px;
             display: grid;
             height: 300px;
-            /* grid-template-columns: 1fr 3fr; */
             grid-template-columns: repeat(1, 100%) auto;
-            /* grid-template-rows: 150px 100px; */
             grid-template-rows: repeat(1, 1fr);
             grid-gap: 20px;
+        }
+
+        .profile-settings {
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+            background: #FFFFFF;
+            border: 1px solid #F2F2F4;
+            border-radius: 10px;
+            padding: 15px 0px;
+        }
+
+        .profile-settings .nav-profile .nav-tab-wrapper {
+            text-align: center;
+        }
+
+        .profile-settings .nav-profile .nav-list {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .profile-settings .nav-profile .nav-list .nav-link {
+            color: #26262E;
+            display: inline-block;
+            font-weight: bold;
+            padding: 0 15px 10px 15px;
+            text-decoration: none;
+        }
+
+        .profile-settings .nav-profile .nav-list .nav-link:hover {
+            border-bottom: 3px solid #FF7901;
+            color: #FF7901;
+            margin-bottom: -3px;
+        }
+
+        .navbar-hr {
+            border: 1px solid #F2F2F4;
+            margin-top: 0px;
+        }
+
+        div#tabs .container-tab {
+            display: none;
+        }
+
+        div#tabs .container-tab.tab1:target {
+            display: block;
+        }
+
+        div#tabs .container-tab.tab2:target {
+            display: block;
+        }
+
+        div#tabs .container-tab.tab3:target {
+            display: block;
+        }
+
+        div#tabs .container-tab.tab4:target {
+            display: block;
+        }
+
+        .toggle {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .toggle-switch {
+            display: inline-block;
+            background: #ccc;
+            border-radius: 16px;
+            width: 40px;
+            height: 20px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+
+        .toggle-switch:before,
+        .toggle-switch:after {
+            content: "";
+        }
+
+        .toggle-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: left 0.25s;
+        }
+
+        .toggle:hover .toggle-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .toggle-checkbox:checked+.toggle-switch {
+            background: #FF7901;
+        }
+
+        .toggle-checkbox:checked+.toggle-switch:before {
+            left: 24px;
+        }
+
+        .toggle-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .toggle-label {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+        }
+
+        .email-notification {
+            padding: 0px 260px;
+            margin: 15px 0px;
+        }
+        h4 {
+            color: #26262E;
         }
     </style>
 </head>
@@ -200,9 +288,64 @@
             </div>
         </div>
         <div class="container-form">
-           <div class="items-1">
-            form
-           </div>
+            <div class="profile-settings">
+                <div id='tabs' class="nav-profile">
+                    <navbar class="nav-tab-wrapper">
+                        <ul class="nav-items">
+                            <li class="nav-list"><a href="#tab1" class="nav-link">Update Profile</a></li>
+                            <li class="nav-list"><a href="#tab2" class="nav-link">Change Password</a></li>
+                            <li class="nav-list"><a href="#tab3" class="nav-link">Email Notifications</a></li>
+                            <li class="nav-list"><a href="#tab4" class="nav-link">Auto Recharge Settings</a></li>
+                        </ul>
+                    </navbar>
+                    <hr class="navbar-hr" />
+
+                    <div id="tab1" class="container-tab tab1">
+                        tab1
+                    </div>
+                    <div id="tab2" class="container-tab tab2">
+                        Tab2 stuff
+                    </div>
+                    <div id="tab3" class="container-tab tab3">
+
+                        <div class="email-notification">
+                            <h4>
+                                <label class="toggle">
+                                    <input class="toggle-checkbox" type="checkbox">
+                                    <div class="toggle-switch"></div>
+                                    <span class="toggle-label">Notify me when list verification completes</span>
+                                </label>
+                            </h4>
+
+                            <h4>
+                                <label class="toggle">
+                                    <input class="toggle-checkbox" type="checkbox" checked>
+                                    <div class="toggle-switch"></div>
+                                    <span class="toggle-label">Notify me when list export completes</span>
+                                </label>
+                            </h4>
+                            <h4>
+                                <label class="toggle">
+                                    <input class="toggle-checkbox" type="checkbox" checked>
+                                    <div class="toggle-switch"></div>
+                                    <span class="toggle-label">Notify me when list verification result is about to
+                                        expire</span>
+                                </label>
+                            </h4>
+                            <h4>
+                                <label class="toggle">
+                                    <input class="toggle-checkbox" type="checkbox" checked>
+                                    <div class="toggle-switch"></div>
+                                    <span class="toggle-label">Receive Low Credits Email</span>
+                                </label>
+                            </h4>
+                        </div>
+
+                    </div>
+                    <div id="tab4" class="container-tab tab3">Tab4 stuff</div>
+
+                </div>
+            </div>
         </div>
 </body>
 
