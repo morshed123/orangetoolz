@@ -20,22 +20,24 @@
       <div class="navbar-nav">
         <p>Balance : <span class="bl-color">$125</span></p>
       </div>
-      <div class="dropdown">
-        <button type="button" class="dropbtn" onclick="myFunction()">
-          <img src="./images/profile.png" class="ht-profile-img" alt="icon">
-          <span>ALexa Jui</span>
-          <i class="fas fa-angle-down"></i>
-        </button>
-        <div class="dropdown-content" id="myDropdown">
-          <a href="#">My Profile</a>
-          <a href="#">Add Fund</a>
-          <a href="#">API Documentation</a>
-          <a href="#">Log Out</a>
-          <div class="ht-dr-sign-out">
-            <a href="#">
-              <i class="fas fa-sign-out-alt"></i>
-              <span>Sign Out</span>
-            </a>
+      <div onclick="DropdownFunc()">
+        <div class="dropdown">
+          <a type="button" class="dropbtn">
+            <img src="./images/profile.png" class="ht-profile-img" alt="icon">
+            <span>ALexa Jui</span>
+            <i class="fas fa-angle-down"></i>
+          </a>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">My Profile</a>
+            <a href="#">Add Fund</a>
+            <a href="#">API Documentation</a>
+            <a href="#">Log Out</a>
+            <div class="ht-dr-sign-out">
+              <a href="#">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sign Out</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -190,11 +192,21 @@
           <div id="tab3" class="container-tab tab3">
 
             <div class="email-notification">
+
+              <h4>
+                <label class="toggle">
+                  <input class="toggle-checkbox" type="checkbox" checked>
+                  <div class="toggle-switch"></div>
+                  <span class="toggle-label">Notify me when list verification completes</span>
+                </label>
+              </h4>
+
+
               <h4>
                 <label class="toggle">
                   <input class="toggle-checkbox" type="checkbox">
                   <div class="toggle-switch"></div>
-                  <span class="toggle-label">Notify me when list verification completes</span>
+                  <span class="toggle-label">Notify me when list export completes</span>
                 </label>
               </h4>
 
@@ -202,17 +214,12 @@
                 <label class="toggle">
                   <input class="toggle-checkbox" type="checkbox" checked>
                   <div class="toggle-switch"></div>
-                  <span class="toggle-label">Notify me when list export completes</span>
+                  <span class="toggle-label">Notify me when list verification result is about to expire</span>
                 </label>
               </h4>
-              <h4>
-                <label class="toggle">
-                  <input class="toggle-checkbox" type="checkbox" checked>
-                  <div class="toggle-switch"></div>
-                  <span class="toggle-label">Notify me when list verification result is about to
-                    expire</span>
-                </label>
-              </h4>
+
+              <hr class="navbar-hr">
+
               <h4>
                 <label class="toggle">
                   <input class="toggle-checkbox" type="checkbox" checked>
@@ -220,6 +227,28 @@
                   <span class="toggle-label">Receive Low Credits Email</span>
                 </label>
               </h4>
+              <div class="contact-form">
+                <div id="contact">
+                  <div class="form">
+                    <p>
+                    <p><label for="">Send Email to<span class="astrict">*</span></label></p>
+                    <input type="text" placeholder=" useremail@gmail.com">
+                    </p>
+                  </div>
+                  <div class="form">
+                    <p>
+                    <p><label for="">When cradits are less than<span class="astrict">*</span></label></p>
+                    <input type="text" placeholder=" 50">
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="navbar-hr">
+
+              <div class="btn-save-div">
+                <button class="btn-save">Save Changes</button>
+              </div>
             </div>
 
           </div>

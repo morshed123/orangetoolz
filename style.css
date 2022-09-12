@@ -15,6 +15,9 @@
 *:after {
   box-sizing: border-box;
 }
+*{
+  font-family: "Poppins";
+}
 
 body {
   margin: 0;
@@ -549,6 +552,48 @@ div#tabs .container-tab.tab4:target {
 
 h4 {
   color: #26262E;
+}
+
+
+.btn-save-div {
+  margin-top: 20px;
+}
+
+.btn-save {
+  background: #FF7901;
+  color: #fff;
+  border: 1px solid #FF7901;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.contact-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 20px;
+}
+
+
+#contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 2vw;
+}
+
+#contact .form {
+  font-size: 12px;
+  text-align: start;
+}
+
+#contact input {
+  width: 100%;
+  padding: 5px 0px;
+}
+
+.astrict {
+  color: #ff0000;
 }
 
 @media screen and (max-width: 768px) {
