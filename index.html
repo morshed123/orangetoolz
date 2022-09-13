@@ -20,24 +20,22 @@
       <div class="navbar-nav">
         <p>Balance : <span class="bl-color">$125</span></p>
       </div>
-      <div onclick="DropdownFunc()">
-        <div class="dropdown">
-          <a type="button" class="dropbtn">
-            <img src="./images/profile.png" class="ht-profile-img" alt="icon">
-            <span>ALexa Jui</span>
-            <i class="fas fa-angle-down"></i>
-          </a>
-          <div class="dropdown-content" id="myDropdown">
-            <a href="#">My Profile</a>
-            <a href="#">Add Fund</a>
-            <a href="#">API Documentation</a>
-            <a href="#">Log Out</a>
-            <div class="ht-dr-sign-out">
-              <a href="#">
-                <i class="fas fa-sign-out-alt"></i>
-                <span>Sign Out</span>
-              </a>
-            </div>
+      <div class="dropdown" id="dropdownDiv" onclick="DropdownFunc()">
+        <a type="button" class="dropbtn">
+          <img src="./images/profile.png" class="ht-profile-img" alt="icon">
+          <span>ALexa Jui</span>
+          <i class="fas fa-angle-down"></i>
+        </a>
+        <div class="dropdown-content" id="TopDropdown">
+          <a href="#">My Profile</a>
+          <a href="#">Add Fund</a>
+          <a href="#">API Documentation</a>
+          <a href="#">Log Out</a>
+          <div class="ht-dr-sign-out">
+            <a href="#">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Sign Out</span>
+            </a>
           </div>
         </div>
       </div>
@@ -47,27 +45,33 @@
   <nav id="nav">
     <div>
       <div class="logo">
-        <i class="fab fa-gg-circle"></i>
-        <span>GG Corp</span>
+        <!-- <i class="fab fa-gg-circle"></i>
+        <span>GG Corp</span> -->
+        <img src="./images/top_side_img.png" alt="">
+
+        <div class="hide-text" id="logo-text">
+          <h6 class="logo-title">CARRRIER LOOKUP</h6>
+          <div class="logo-subtitle">
+            <small>ACCURATE CARRRIER INFO</small>
+          </div>
+        </div>
+
       </div>
       <ul class="nav">
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fas fa-border-all"></i>
             <span>Dashboard</span>
           </a>
         </li>
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>Lookup</span>
           </a>
         </li>
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fa-solid fa-layer-group"></i>
             <span>Files</span>
           </a>
@@ -75,21 +79,18 @@
 
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fas fa-home"></i>
             <span>Logs <i class="fas fa-angle-down"></i></span>
           </a>
           <ul class="d-none">
             <li>
               <a href="#" class="sub_menu nav__item-link">
-                <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
                 <i class="fa-solid fa-file-lines"></i>
                 <span>Single/Bulk Lookup</span>
               </a>
             </li>
             <li>
               <a href="#" class="sub_menu nav__item-link">
-                <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
                 <i class="fa-brands fa-chrome"></i>
                 <span>Daily Usages</span>
               </a>
@@ -99,28 +100,24 @@
 
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fa-solid fa-credit-card"></i>
             <span>Buy Credits</span>
           </a>
         </li>
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fas fa-sun"></i>
             <span>Integrations</span>
           </a>
         </li>
         <li class="nav__item">
           <a href="#profile" class="nav__item-link active">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fas fa-user-alt"></i>
             <span>Profile</span>
           </a>
         </li>
         <li class="nav__item">
           <a href="#" class="nav__item-link">
-            <!-- <img src="./images/Integrations.png" class="image-icons" alt="icon"> -->
             <i class="fas fa-cogs"></i>
             <span>Settings</span>
           </a>
@@ -137,7 +134,7 @@
 
   <!-- main content -->
   <div class="page" id="profile">
-    <div class="container" id="profile">
+    <div class="container" id="container">
       <div class="profile-card">
         <img src="./images/profile.png" alt="img">
         <h3 class="card-title">John Doe</h3>
@@ -170,7 +167,7 @@
         </div>
       </div>
     </div>
-    <div class="container-form">
+    <div class="container-form" id="container-custom-form">
       <div class="profile-settings">
         <div id='tabs' class="nav-profile">
           <navbar class="nav-tab-wrapper">
@@ -190,9 +187,7 @@
             Tab2 stuff
           </div>
           <div id="tab3" class="container-tab tab3">
-
             <div class="email-notification">
-
               <h4>
                 <label class="toggle">
                   <input class="toggle-checkbox" type="checkbox" checked>
@@ -200,7 +195,6 @@
                   <span class="toggle-label">Notify me when list verification completes</span>
                 </label>
               </h4>
-
 
               <h4>
                 <label class="toggle">
@@ -253,7 +247,6 @@
 
           </div>
           <div id="tab4" class="container-tab tab3">Tab4 stuff</div>
-
         </div>
       </div>
     </div>

@@ -8,8 +8,13 @@ function collapse_nav(head, toggler, sidenav) {
   const nav = document.getElementById(sidenav);
 
   nav_toggler.addEventListener("click", function () {
+    // alert(24);
     this.classList.toggle("fa-times");
     nav.classList.toggle("collapse");
+    document.getElementById('profile').classList.toggle("page-custom");
+    document.getElementById('container').classList.toggle("container-custom");
+    document.getElementById('container-custom-form').classList.toggle("container-custom");
+    document.getElementById("logo-text").classList.toggle("hide-next");
     header.classList.toggle("collapse-header");
   });
 }
@@ -42,15 +47,16 @@ sub_links.forEach((link) => {
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function DropdownFunc() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("TopDropdown").classList.toggle("show");
+  document.getElementById("dropdownDiv").classList.toggle("border-none");
 }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
+  var topDropdown = document.getElementById("TopDropdown");
+    if (topDropdown.classList.contains('show')) {
+      topDropdown.classList.remove('show');
     }
   }
 }

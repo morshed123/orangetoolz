@@ -1,13 +1,9 @@
 :root {
   --nav-width: 205px;
   --nav-collapse-width: 75px;
-
   --header-height: 75px;
-
-  /* --nav-bg-color: #3a86ff; */
   --nav-bg-color: #000000;
   --active-color: #FFFFFF;
-  /* --active-color: #ffff3f; */
 }
 
 *,
@@ -15,7 +11,8 @@
 *:after {
   box-sizing: border-box;
 }
-*{
+
+* {
   font-family: "Poppins";
 }
 
@@ -46,10 +43,13 @@ header {
   align-items: center;
   padding: 0 1rem;
   height: var(--header-height);
-  /* background-color: #f3f3f3; */
   background-color: #000000;
   padding-left: calc(var(--nav-width) + 1rem);
   transition: padding-left 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 header #nav-toggler {
@@ -58,6 +58,24 @@ header #nav-toggler {
   background-color: #fff;
   padding: 0.25rem 0.35rem;
   border-radius: 0.25rem;
+}
+
+#nav {
+  transition: 0.5s;
+}
+
+/* main content expand */
+.page-custom {
+  padding: 0px 0px 0px 90px !important;
+}
+
+.container-custom {
+  width: 98.8% !important;
+  margin-left: 0 !important;
+}
+
+.container-custom-form {
+  margin: 40px 15px 0px 0px !important;
 }
 
 /* header draopdown  */
@@ -97,6 +115,11 @@ header #nav-toggler {
   overflow: hidden;
   border-radius: 30px;
   background-color: #fff;
+  margin-bottom: 4px;
+}
+
+.border-none {
+  border-radius: 20px 20px 0 0;
 }
 
 .dropdown .dropbtn {
@@ -107,9 +130,14 @@ header #nav-toggler {
   color: #000;
   background-color: inherit;
   margin: 0;
-  padding: 6px 12px;
+  padding: 3px 16px;
   align-items: center;
   display: flex;
+}
+
+.dropbtn img,
+.dropbtn span {
+  pointer-events: none;
 }
 
 .dropbtn img {
@@ -142,7 +170,7 @@ header #nav-toggler {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 158px;
+  min-width: 162px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
   z-index: 1;
 }
@@ -201,18 +229,56 @@ nav {
   width: var(--nav-width);
   transition: width 0.2s ease-in-out;
   box-shadow: 0 0 2px #343434;
+  z-index: 101;
 }
 
-nav .logo {
+/* nav .logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: var(--header-height);
 }
-
 nav .logo span {
   margin-left: 1rem;
+} */
+nav .logo {
+  align-items: center;
+  height: var(--header-height);
 }
+
+nav .logo img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+nav .logo-title {
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+nav .logo-subtitle {
+  transform: translate(5px, -10px);
+  padding-left: 13px;
+}
+
+nav small {
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.collapse .hide-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
 
 .nav__item-link,
 .logo,
@@ -228,12 +294,12 @@ nav .logo span {
 .logo span,
 .sign-out span {
   margin-left: 0.5rem;
+  transition: .5s;
 }
 
 .nav__item-link+ul a {
   display: block;
   padding: 0.6rem;
-  /* background-color: #f3f3f3; */
   background-color: #000000;
   white-space: nowrap;
 }
@@ -254,7 +320,10 @@ nav .logo span {
 }
 
 .collapse span {
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
 }
 
 .collapse .nav__item-link+ul a {
@@ -305,11 +374,12 @@ nav .logo span {
 
 /* main content  */
 .page {
-  width: 100%;
-  overflow-y: auto;
+  width: 99.7%;
   padding: 0px 0px 0px 155px;
   z-index: 0;
   background-color: hsl(0, 0%, 100%);
+  transition: .4s;
+  margin-bottom: 40px;
 }
 
 .page:target {
@@ -319,12 +389,13 @@ nav .logo span {
 
 .container {
   width: 93%;
-  margin: 70px 0px 0px 50px;
+  margin: 130px 0px 0px 67px;
   display: grid;
   height: 300px;
   grid-template-columns: repeat(1, 290px) auto;
   grid-template-rows: repeat(1, 1fr);
   grid-gap: 20px;
+  transition: .4s;
 }
 
 .profile-card {
@@ -372,7 +443,7 @@ p {
 .pro-cradit-card .card-container {
   width: 100%;
   display: grid;
-  height: 150px;
+  height: 140px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-gap: 15px;
@@ -409,26 +480,24 @@ p {
 
 .cradit-title {
   color: #7D7D7E;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 0px;
 }
 
 .cradit-account {
   color: #BDBDBD;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
+  padding-top: 12px;
   margin-bottom: 0px;
 }
 
 .container-form {
-  width: 93%;
-  margin: 70px 0px 0px 50px;
+  margin: 40px 16px 0px 68px;
   display: grid;
-  height: 300px;
   grid-template-columns: repeat(1, 100%) auto;
   grid-template-rows: repeat(1, 1fr);
-  grid-gap: 20px;
 }
 
 .profile-settings {
